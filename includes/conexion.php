@@ -5,13 +5,14 @@
  */
 
 // Configuración de la base de datos
-$servidor = "localhost";
+$servidor = "127.0.0.1"; // Cambio de localhost a IP directa
+$puerto = 3307; // Puerto cambiado porque 3306 está ocupado
 $usuario_bd = "root";
 $password_bd = "";
 $nombre_bd = "consultora";
 
-// Crear conexión
-$conexion = mysqli_connect($servidor, $usuario_bd, $password_bd, $nombre_bd);
+// Crear conexión con puerto específico
+$conexion = mysqli_connect($servidor, $usuario_bd, $password_bd, $nombre_bd, $puerto);
 
 // Verificar conexión
 if (!$conexion) {
