@@ -63,7 +63,7 @@ function formatearFecha($fecha) {
                                              width="36" height="36" class="rounded-circle me-2" 
                                              alt="<?php echo $empresa['Pais_Imagen']; ?>" 
                                              title="<?php echo $empresa['Pais_Nombre']; ?>">
-                                        <?php echo htmlspecialchars($empresa['Denominacion']); ?>
+                                        <?php echo $empresa['Denominacion']; ?>
                                     </td>
                                     <td>
                                         <?php echo formatearFecha($empresa['Fecha_Carga']); ?>
@@ -72,7 +72,7 @@ function formatearFecha($fecha) {
                                         <img src="img/avatars/<?php echo $empresa['Usuario_Foto']; ?>" 
                                              width="36" height="36" class="rounded-circle me-2" 
                                              alt="<?php echo $empresa['Usuario_Foto']; ?>">
-                                        <?php echo htmlspecialchars($empresa['Usuario_Nombre']); ?>
+                                        <?php echo $empresa['Usuario_Nombre']; ?>
                                     </td>
                                     <td>
                                         <a class="btn btn-primary btn-sm success" 

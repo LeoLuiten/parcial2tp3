@@ -103,7 +103,7 @@ $paises = ejecutarConsulta($consulta_paises);
                             <h5 class="card-title mb-0">Denominación <i class="align-middle me-2" data-feather="command"></i></h5>
                             <input type="text" class="form-control" name="denominacion" 
                                    placeholder="Ingresa el nombre" 
-                                   value="<?php echo htmlspecialchars($denominacion); ?>" required>
+                                   value="<?php echo $denominacion; ?>" required>
                         </div>
 
                         <div class="card-body">
@@ -114,7 +114,7 @@ $paises = ejecutarConsulta($consulta_paises);
                                     <?php foreach ($paises as $pais): ?>
                                         <option value="<?php echo $pais['Id']; ?>" 
                                                 <?php echo ($pais_id == $pais['Id']) ? 'selected' : ''; ?>>
-                                            <?php echo htmlspecialchars($pais['Denominacion']); ?>
+                                            <?php echo $pais['Denominacion']; ?>
                                         </option>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
@@ -124,7 +124,7 @@ $paises = ejecutarConsulta($consulta_paises);
                         <div class="card-body">
                             <h5 class="card-title mb-0">Observaciones</h5>
                             <textarea class="form-control" rows="2" name="observaciones" 
-                                      placeholder="Comentarios generales..."><?php echo htmlspecialchars($observaciones); ?></textarea>
+                                      placeholder="Comentarios generales..."><?php echo $observaciones; ?></textarea>
                         </div>
 
                         <div class="card-body">

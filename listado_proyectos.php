@@ -51,7 +51,7 @@ $consulta = "SELECT p.Id, p.Denominacion, p.Fecha_Carga, p.Observaciones, p.Prio
              INNER JOIN paises pais ON e.Id_Pais = pais.Id
              INNER JOIN estados est ON p.Id_Estado = est.Id
              INNER JOIN usuarios lider ON p.Id_Lider = lider.Id
-             ORDER BY p.Fecha_Carga ASC";
+             ORDER BY p.Prioridad DESC, p.Fecha_Carga ASC"; // Prioridad primero, luego por fecha
 
 $proyectos = ejecutarConsulta($consulta);
 $total_proyectos = $proyectos ? count($proyectos) : 0;
@@ -111,11 +111,19 @@ function formatearFecha($fecha) {
                                 <?php foreach ($proyectos as $index => $proyecto): ?>
                                 <tr>
                                     <td><?php echo $index + 1; ?></td>
-                                    <td><?php echo htmlspecialchars($proyecto['Denominacion']); ?></td>
+                                    <td>
+                                        <?php if ($proyecto['Prioridad'] == 1): ?>
+                                            <span class="badge bg-danger me-2" title="Alta Prioridad">
+                                                <i data-feather="alert-triangle" style="width: 12px; height: 12px;"></i> URGENTE
+                                            </span>
+                                            <br>
+                                        <?php endif; ?>
+                                        <strong><?php echo $proyecto['Denominacion']; ?></strong>
+                                    </td>
                                     <td class="d-none d-md-table-cell"><?php echo formatearFecha($proyecto['Fecha_Carga']); ?></td>
                                     <td class="d-none d-md-table-cell">
                                         <img src="img/countries/<?php echo $proyecto['Pais_Imagen']; ?>" width="36" height="36" class="rounded-circle me-2">
-                                        <?php echo htmlspecialchars($proyecto['Empresa_Nombre']); ?>
+                                        <?php echo $proyecto['Empresa_Nombre']; ?>
                                     </td>
                                     <td>
                                         <span class="badge <?php echo obtenerClaseEstado($proyecto['Estado_Id']); ?>">
@@ -124,7 +132,7 @@ function formatearFecha($fecha) {
                                     </td>
                                     <td class="d-none d-md-table-cell">
                                         <img src="img/avatars/<?php echo $proyecto['Lider_Foto']; ?>" width="36" height="36" class="rounded-circle me-2">
-                                        <?php echo htmlspecialchars($proyecto['Lider_Nombre']); ?>
+                                        <?php echo $proyecto['Lider_Nombre']; ?>
                                     </td>
                                     <td>
                                         <?php if (esAdmin()): ?>

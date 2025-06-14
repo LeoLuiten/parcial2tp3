@@ -44,7 +44,7 @@ $total_paises = $paises ? count($paises) : 0;
                                 <?php foreach ($paises as $index => $pais): ?>
                                 <tr>
                                     <td><?php echo $index + 1; ?></td>
-                                    <td><?php echo htmlspecialchars($pais['Denominacion']); ?></td>
+                                    <td><?php echo $pais['Denominacion']; ?></td>
                                     <td class="d-none d-md-table-cell">
                                         <img src="img/countries/<?php echo $pais['Imagen']; ?>" 
                                              width="36" height="36" class="rounded-circle me-2" 

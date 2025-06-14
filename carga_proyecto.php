@@ -120,7 +120,7 @@ $lideres = ejecutarConsulta($consulta_lideres);
                             <h5 class="card-title mb-0">Denominación <i class="align-middle me-2" data-feather="command"></i></h5>
                             <input type="text" class="form-control" name="denominacion" 
                                    placeholder="Ingresa el nombre del Proyecto" 
-                                   value="<?php echo htmlspecialchars($denominacion); ?>" required>
+                                   value="<?php echo $denominacion; ?>" required>
                         </div>
 
                         <div class="card-body">
@@ -131,7 +131,7 @@ $lideres = ejecutarConsulta($consulta_lideres);
                                     <?php foreach ($empresas as $empresa): ?>
                                         <option value="<?php echo $empresa['Id']; ?>" 
                                                 <?php echo ($empresa_id == $empresa['Id']) ? 'selected' : ''; ?>>
-                                            <?php echo htmlspecialchars($empresa['Denominacion']); ?>
+                                            <?php echo $empresa['Denominacion']; ?>
                                         </option>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
@@ -146,7 +146,7 @@ $lideres = ejecutarConsulta($consulta_lideres);
                                     <?php foreach ($lideres as $lider): ?>
                                         <option value="<?php echo $lider['Id']; ?>" 
                                                 <?php echo ($lider_id == $lider['Id']) ? 'selected' : ''; ?>>
-                                            <?php echo htmlspecialchars($lider['Nombre_Completo']); ?>
+                                            <?php echo $lider['Nombre_Completo']; ?>
                                         </option>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
@@ -156,7 +156,7 @@ $lideres = ejecutarConsulta($consulta_lideres);
                         <div class="card-body">
                             <h5 class="card-title mb-0">Observaciones</h5>
                             <textarea class="form-control" rows="2" name="observaciones" 
-                                      placeholder="Observaciones del tema..."><?php echo htmlspecialchars($observaciones); ?></textarea>
+                                      placeholder="Observaciones del tema..."><?php echo $observaciones; ?></textarea>
                         </div>
                         
                         <div class="card-body">
