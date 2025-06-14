@@ -52,11 +52,11 @@ CREATE TABLE `paises` (
 -- Volcado de datos para la tabla `paises`
 --
 
-INSERT INTO `paises` (`Id`, `Denominacion`) VALUES
-(1, 'Argentina'),
-(2, 'Chile'),
-(3, 'Uruguay'),
-(4, 'Braasil');
+INSERT INTO `paises` (`Id`, `Denominacion`, `Imagen`) VALUES
+(1, 'Argentina', 'ARG.jpg'),
+(2, 'Chile', 'CHI.jpg'),
+(3, 'Uruguay', 'URU.jpg'),
+(4, 'Braasil', 'BRA.jpg');
 
 -- --------------------------------------------------------
 
