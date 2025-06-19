@@ -5,8 +5,8 @@
  */
 
 // Configuración de la base de datos
-$servidor = "127.0.0.1"; // Cambio de localhost a IP directa
-$puerto = 3307; // Puerto cambiado porque 3306 está ocupado
+$servidor = "127.0.0.1";
+$puerto = 3307; 
 $usuario_bd = "root";
 $password_bd = "";
 $nombre_bd = "consultora";
